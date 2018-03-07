@@ -60,4 +60,20 @@ describe('#outputs/MockOutput', () => {
 
 	});
 
+	describe('getColumns()', () => {
+
+		it('should get columns count from stdout', () => {
+			expect(output.getColumns()).to.be.equal(80);
+		});
+
+	});
+
+	describe('getRows()', () => {
+
+		it('should get rows count from stdout', () => {
+			expect(output.getRows()).to.be.equal(20);
+		});
+
+	});
+
 });

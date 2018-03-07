@@ -34,4 +34,16 @@ export abstract class Output
 		this._stderr.write(message);
 	}
 
+
+	public getColumns(): number
+	{
+		return this._stdout.getColumns();
+	}
+
+
+	public getRows(): number
+	{
+		return this._stdout.getRows();
+	}
+
 }

@@ -21,4 +21,20 @@ describe('#streams/MockStream', () => {
 		expect(stream.getContent()).to.be.eql(['a', 'b', 'c']);
 	});
 
+	describe('getColumns()', () => {
+
+		it('should return number of columns', () => {
+			expect(stream.getColumns()).to.be.equal(80);
+		});
+
+	});
+
+	describe('getRows()', () => {
+
+		it('should return number of rows', () => {
+			expect(stream.getRows()).to.be.equal(20);
+		});
+
+	});
+
 });

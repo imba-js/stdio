@@ -6,4 +6,8 @@ export interface Stream
 
 	isTTY(): boolean;
 
+	getColumns(): number;
+
+	getRows(): number;
+
 }
