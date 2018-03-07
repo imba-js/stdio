@@ -40,4 +40,32 @@ describe('#Questions', () => {
 
 	});
 
+	describe('askQuestions()', () => {
+
+		it('should ask many questions', async () => {
+			const answers = await questions.askQuestions([
+				{question: 'a'},
+				{question: 'b'},
+			]);
+
+			expect(answers).to.be.eql({
+				a: '',
+				b: '',
+			});
+		});
+
+		it('should ask many questions with custom keys', async () => {
+			const answers = await questions.askQuestions([
+				{key: 'A', question: 'a'},
+				{key: 'B', question: 'b'},
+			]);
+
+			expect(answers).to.be.eql({
+				A: '',
+				B: '',
+			});
+		});
+
+	});
+
 });

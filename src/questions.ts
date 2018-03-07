@@ -10,7 +10,7 @@ export declare interface QuestionOptions
 }
 
 
-export declare type QuestionsList = Array<{question: string, options?: QuestionOptions}>;
+export declare type QuestionsList = Array<{key?: string, question: string, options?: QuestionOptions}>;
 export declare type AnswersList = {[question: string]: string};
 
 
@@ -41,7 +41,10 @@ export class Questions
 		const answers: AnswersList = {};
 
 		for (let i = 0; i < questions.length; i++) {
-			answers[questions[i].question] = await this.askQuestion(questions[i].question, questions[i].options);
+			const question = questions[i];
+			const key = typeof question.key === 'undefined' ? question.question : question.key;
+
+			answers[key] = await this.askQuestion(questions[i].question, questions[i].options);
 		}
 
 		return answers;
